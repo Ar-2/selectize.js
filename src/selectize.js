@@ -1033,6 +1033,9 @@ $.extend(Selectize.prototype, {
 		if (query !== self.lastQuery) {
 			self.lastQuery = query;
 			result = self.sifter.search(query, $.extend(options, {score: calculateScore}));
+			if (result.total == 0 && self.hasOptions) {
+				result = self.sifter.search('', $.extend(options, {score: calculateScore}));
+			}
 			self.currentResults = result;
 		} else {
 			result = $.extend(true, {}, self.currentResults);

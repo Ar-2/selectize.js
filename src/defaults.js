@@ -48,6 +48,7 @@ Selectize.defaults = {
 	dropdownParent: null,
 
 	copyClassesToDropdown: true,
+	useSifter: true,
 
 	/*
 	load                 : null, // function(query, callback) { ... }
